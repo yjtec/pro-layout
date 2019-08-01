@@ -107,10 +107,7 @@ class BasicLayout extends React.Component{
       }
       return id;
     };
-    
-
     const {menuData,breadcrumb} = getMenuData(routes,menu,formatMessage,menuDataRender);
-
     const defaultProps = {
       ...this.props,
       formatMessage,
@@ -121,7 +118,6 @@ class BasicLayout extends React.Component{
       pathname:location.pathname,
       ...defaultProps
     },this.props)
-  
     const breadcrumbProps = getBreadcrumbProps({
       ...this.props,
       breadcrumb
