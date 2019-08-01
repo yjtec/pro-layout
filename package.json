@@ -1,0 +1,33 @@
+{
+  "name": "@yjtec/pro-layout",
+  "version": "0.0.6",
+  "description": "",
+  "main": "lib/index.js",
+  "module": "dist/index.esm.js",
+  "files": [
+    "/lib",
+    "/es"
+  ],
+  "authors": {
+    "name": "kidkang",
+    "email": "723616880@qq.com"
+  },
+  "repository": "/UserLayout",
+  "scripts": {
+    "doc:dev": "umi-lib doc dev",
+    "dev": "umi-lib build --watch",
+    "build": "umi-lib build",
+    "pub": "umi-lib build && npm publish --access public"
+  },
+  "peerDependencies": {
+    "react": "16.x"
+  },
+  "devDependencies": {
+    "umi-library": "^1.6.0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "umi-plugin-block-dev": "^2.2.2",
+    "umi-plugin-react": "^1.9.13"
+  }
+}
