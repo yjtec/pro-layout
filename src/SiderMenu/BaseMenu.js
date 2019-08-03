@@ -124,11 +124,16 @@ export default class BaseMenu extends PureComponent{
       selectedKeys = [openKeys[openKeys.length - 1]];
     }
     let props = {};
-    if(openKeys){
-      props = {
-        openKeys: openKeys.length === 0 ? [...selectedKeys] : openKeys,
-      };
+    if(typeof openKeys === 'string'){
+      props={openKeys:[openKeys]}
+    }else{
+      if(openKeys){
+        props = {
+          openKeys: openKeys.length === 0 ? [...selectedKeys] : openKeys,
+        };
+      }      
     }
+    
     const cls = classNames(className, {
       'top-nav-menu': mode === 'horizontal',
     });
