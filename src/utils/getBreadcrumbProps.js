@@ -77,7 +77,7 @@ const conversionFromLocation = (routerLocation = { pathname: '/' }, breadcrumb, 
         .filter(item => item && item.path);
     extraBreadcrumbItems.unshift({
         path:'/',
-        breadcrumbName:renderItemLocal({locale:'menu.home'},props)
+        breadcrumbName:props.local ? renderItemLocal({locale:'menu.home'},props) :'首页'
     })
     return extraBreadcrumbItems;
 };
