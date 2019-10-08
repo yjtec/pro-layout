@@ -95,7 +95,6 @@ class BasicLayout extends React.Component{
         routes:[]
       },
     } = this.props;
-    console.log(fixSiderbar);
     const {routes,path} = route;
     const formatMessage = ({ id, defaultMessage, ...rest }) => {
 
