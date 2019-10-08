@@ -1,13 +1,10 @@
 {
   "name": "@yjtec/pro-layout",
-  "version": "0.0.9",
+  "version": "0.0.12",
   "description": "",
   "main": "lib/index.js",
   "module": "dist/index.esm.js",
-  "files": [
-    "/lib",
-    "/es"
-  ],
+  "files": ["/lib", "/es"],
   "authors": {
     "name": "kidkang",
     "email": "723616880@qq.com"
@@ -28,6 +25,8 @@
   "license": "MIT",
   "dependencies": {
     "umi-plugin-block-dev": "^2.2.2",
-    "umi-plugin-react": "^1.9.13"
+    "umi-plugin-react": "^1.9.13",
+    "react-container-query": "^0.11.0",
+    "react-document-title": "^2.0.3"
   }
 }

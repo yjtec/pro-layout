@@ -68,6 +68,13 @@ const defaultPageTitleRender = (pageProps,props) =>{
   }
   return defaultGetPageTitle(pageProps);
 }
+
+const getPaddingLeft = (hasLeftPadding,siderWidth) => {
+  if(hasLeftPadding){
+    return siderWidth;
+  }
+  return undefined;
+}
 class BasicLayout extends React.Component{
   getContext = () => {
     return{
@@ -82,10 +89,13 @@ class BasicLayout extends React.Component{
       menu,
       navTheme,
       menuDataRender,
+      fixSiderbar,
+      fixedHeader,
       route = {
         routes:[]
       },
     } = this.props;
+    console.log(fixSiderbar);
     const {routes,path} = route;
     const formatMessage = ({ id, defaultMessage, ...rest }) => {
 
@@ -108,6 +118,8 @@ class BasicLayout extends React.Component{
       return id;
     };
     const {menuData,breadcrumb} = getMenuData(routes,menu,formatMessage,menuDataRender);
+    const hasLeftPadding = fixSiderbar;
+
     const defaultProps = {
       ...this.props,
       formatMessage,
@@ -138,13 +150,17 @@ class BasicLayout extends React.Component{
 
                   <Layout
                     style={{
-                      minHeight:'100vh'
+                      paddingLeft: getPaddingLeft(!!hasLeftPadding, siderWidth),
+                      minHeight:'100vh',
                     }}
                   >
                     {headerRender({
-                      ...this.props
+                      ...defaultProps,
                     })}
-                    <Content className="ant-pro-basicLayout-content" style={{paddingTop:0}}>
+                    <Content 
+                      className="ant-pro-basicLayout-content" 
+                      style={!fixedHeader ? {paddingTop:0} :{}}
+                    >
                       <RouteContext.Provider value={{
                         breadcrumb: breadcrumbProps,
                         ...this.props,

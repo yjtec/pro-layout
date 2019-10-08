@@ -45,10 +45,12 @@ class SiderMenu extends Component{
       theme,
       siderWidth = 256,
       title,
-      logo
+      logo,
+      fixSiderbar
     } = this.props;
     const {openKeys} = this.state;
     const siderClassName = classNames('ant-pro-sider-menu-sider', {
+      'fix-sider-bar': fixSiderbar,
       light: theme === 'light',
     });
   

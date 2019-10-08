@@ -20,10 +20,12 @@ class HeaderView extends Component {
     return collapsed ? 'calc(100% - 80px)' : `calc(100% - ${siderWidth}px)`;    
   }
   render(){
+    const { fixedHeader } = this.props;
     const width = this.getHeadWidth();
     return(
       <Header
         style={{padding:0,zIndex:2,width:'100%'}}
+        className={fixedHeader ? 'ant-pro-fixed-header':''}
       >
         {this.renderContent()}
       </Header>
